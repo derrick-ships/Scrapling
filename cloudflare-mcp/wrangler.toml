@@ -6,14 +6,13 @@ workers_dev = true
 
 [vars]
 APP_NAME = "Scrapling MCP"
-# Replace with the workers.dev hostname assigned to your account.
-PUBLIC_ORIGIN = "https://scrapling-mcp.your-subdomain.workers.dev"
-BACKEND_MCP_URL = "https://scrapling.derrickserna.com/mcp"
+PUBLIC_ORIGIN = "https://scrapling-mcp.derrickserna-ca.workers.dev"
+BACKEND_MCP_URL = "https://scrapling-gateway.derrickserna.com/mcp"
 ALLOWED_GITHUB_USERS = "derrick-ships"
 
 [[kv_namespaces]]
 binding = "OAUTH_KV"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "cb722d819dee4c8c9873b639e542011a"
 
 # Secrets: GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, BACKEND_AUTH_TOKEN.
 # No Workers AI, paid services, Durable Objects, or app database.
@@ -22,3 +21,4 @@ enabled = false
 
 [dev]
 port = 8788
+
