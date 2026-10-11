@@ -1,0 +1,4 @@
+PUBLIC_ORIGIN=http://localhost:8788
+GITHUB_CLIENT_ID=local-github-oauth-client-id
+GITHUB_CLIENT_SECRET=local-github-oauth-client-secret
+BACKEND_AUTH_TOKEN=your-existing-scrapling-token

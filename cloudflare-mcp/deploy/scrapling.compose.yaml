@@ -1,0 +1,21 @@
+# Update only the existing Scrapling Coolify service after setting its secret.
+# Verified official 0.4.15 multi-platform image digest on 2026-10-10.
+services:
+  scrapling:
+    image: ghcr.io/d4vinci/scrapling:0.4.15@sha256:1bacbc8ec90b3090d462e12f6555e241daf0dfeb684ab326ffa09d52d8226e69
+    restart: unless-stopped
+    shm_size: 1gb
+    environment:
+      - SERVICE_FQDN_SCRAPLING_8002=https://scrapling.derrickserna.com
+      - SCRAPLING_MCP_AUTH_TOKEN=${SCRAPLING_MCP_AUTH_TOKEN:?Set this secret in Coolify first}
+    command:
+      - mcp
+      - --http
+      - --host
+      - 0.0.0.0
+      - --port
+      - '8002'
+    expose:
+      - '8002'
+    volumes:
+      - /opt/scrapling/profiles:/profiles

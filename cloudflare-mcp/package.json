@@ -1,0 +1,33 @@
+{
+  "name": "scrapling-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "cf-typegen": "wrangler types",
+    "type-check": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "^1.2.3",
+    "@modelcontextprotocol/client": "2.3.1",
+    "@modelcontextprotocol/server": "2.0.0",
+    "agents": "0.28.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261010.1",
+    "typescript": "6.0.3",
+    "wrangler": "^4.105.0",
+    "esbuild": "^0.28.2",
+    "miniflare": "5.20261006.1-alpha"
+  },
+  "overrides": {
+    "agents": {
+      "@modelcontextprotocol/client": "$@modelcontextprotocol/client",
+      "@modelcontextprotocol/sdk": "^1.31.0"
+    }
+  }
+}
